@@ -1,0 +1,2 @@
+The IRC led to a structure "3-product-noPT.xyz" where proton transfer from AcOH to 3-HPA(2-) had not yet occurred.  
+Under the assumption that PT would occur with a negligible barrier, we took the product structure from Supporting Fig. 13 as the "final" product.

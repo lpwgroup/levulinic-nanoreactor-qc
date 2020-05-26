@@ -1,0 +1,6 @@
+This folder contains:
+
+1) b3lyp-631gs: B3LYP/6-31G* optimized transition state with corresponding reactant and product.
+
+2) wb97xv_def2tzvpd_no_transition : wB97X-V/def2-TZVPD optimized reactant and product with frequency analysis. 
+A transition state calculation at this level of theory failed to converge to a TS corresponding to the B3LYP/6-31G* result.

@@ -1,0 +1,9 @@
+This reaction pathway, arguably the most important in the manuscript, contains several different calculations.
+
+wb97xv_def2tzvpd_no_transition : Contains frequency calculations of optimized reactant and product. Provides Delta-E and Delta-G for reaction.
+
+wb97xv_def2tzvpd_meci : Contains geometry optimization of minimum energy crossing point between closed-shell and singlet diradical electronic states.
+Used as input to the CDFT-CI calculation.
+
+wb97xv_def2tzvpd_cdft-ci : Contains wB97X-V/def2-TZVPD CDFT-CI energy calculations at optimized reactant and minimum energy crossing point structures. 
+Provides upper bound to Ea.

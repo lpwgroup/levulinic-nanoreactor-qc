@@ -1,0 +1,114 @@
+$molecule
+-3 1
+C       -0.1486753537    0.6425723012   -1.8220121761
+C        0.0689928594    0.7794737245   -3.3382327620
+O       -0.5219996943    1.7430014256   -3.8934173471
+O        0.8116961226   -0.0459777865   -3.9224140301
+C        0.4291346676   -0.6042239741   -1.1689682680
+H       -1.2268913238    0.7078340781   -1.6505490684
+H        0.2763544759    1.5396340170   -1.3603951129
+C        0.2511644934   -0.7522803499    0.3673552424
+H        1.5030203775   -0.6660272202   -1.3633017036
+H       -0.0220661379   -1.4978337346   -1.6142202251
+C       -1.2384413335   -0.6975118028    0.7597208443
+H       -1.7124754782    0.2490076219    0.4870187342
+H       -1.3175272279   -0.8220523425    1.8417824368
+H       -1.7853631618   -1.5128662708    0.2771176684
+O        0.8388805309   -1.8790449360    0.8246650626
+O        0.9059985353    0.4305376931    0.8888377907
+O        1.2588832297   -0.0582487827    2.5936682166
+H        1.2282028396   -0.9836071395    2.2306304331
+O       -0.6793710010    0.5831663419    4.1931583913
+H        0.0487045396    0.3071165960    3.5455637447
+O       -1.1151028880    1.8112184912    3.7151044283
+$end
+
+$rem
+jobtype               sp
+method                wb97x-v
+basis                 def2-tzvpd
+symmetry              off
+sym_ignore            true
+incdft                false
+incfock               0
+!scf_algorithm         diis_gdm
+scf_convergence       8
+thresh                14
+unrestricted          true
+!purecart             112
+max_scf_cycles        1000
+geom_opt_max_cycles   500
+geom_opt_dmax         100
+geom_opt_tol_gradient 10
+solvent_method        pcm
+!ideriv                1
+rpath_tol_displacement 1000
+rpath_max_cycles      100
+rpath_direction       1
+cdft                  true
+$end
+
+$cdft
+2
+1 1 18
+0
+1 1 18 s
+$end
+
+$pcm
+theory              cosmo
+method              iswig
+Radii               bondi
+vdwScale            1.20
+hpoints             110
+heavypoints         110
+$end
+
+$solvent
+dielectric 78.400000
+$end
+
+@@@
+
+$molecule
+read
+$end
+
+$rem
+jobtype               force
+method                wb97x-v
+basis                 def2-tzvpd
+symmetry              off
+sym_ignore            true
+incdft                false
+incfock               0
+!scf_algorithm         diis_gdm
+scf_guess             read
+scf_convergence       8
+thresh                14
+unrestricted          true
+!purecart             112
+max_scf_cycles        1000
+geom_opt_max_cycles   500
+geom_opt_dmax         100
+geom_opt_tol_gradient 10
+solvent_method        pcm
+ideriv                1
+rpath_tol_displacement 1000
+rpath_max_cycles      100
+rpath_direction       1
+$end
+
+$pcm
+theory              cosmo
+method              iswig
+Radii               bondi
+vdwScale            1.20
+hpoints             110
+heavypoints         110
+$end
+
+$solvent
+dielectric 78.400000
+$end
+
